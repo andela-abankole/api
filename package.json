@@ -1,0 +1,40 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "A Document Management System API developed using mongoose, an ODM for Node and Express JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node ./ --captureExceptions --forceexit --color --junitreport --output ./testResult",
+    "start": "nodemon index.js"
+  },
+  "author": "Akinjide Bankole",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.1",
+    "dotenv": "^1.2.0",
+    "express": "^4.13.3",
+    "express-session": "^1.12.0",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "^5.4.0",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.2.2",
+    "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "chance": "^0.8.0",
+    "frisby": "^0.8.5",
+    "jasmine-node": "^1.14.5"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-abankole/api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andela-abankole/api/issues"
+  },
+  "homepage": "https://github.com/andela-abankole/api#readme"
+}
