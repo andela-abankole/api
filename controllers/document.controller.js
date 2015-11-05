@@ -15,7 +15,7 @@ module.exports = {
    * @return    {[JSON]}         
    */
   createDocument : function(req, res) {
-    User.findOne({ username : req.decoded.username }, function(err, response) {
+    User.findOne({ username : req.decoded.audience.username }, function(err, response) {
       if (err)
         return res.json({ statusCode : 500, status : 'Internal Server Error', response : err });
 

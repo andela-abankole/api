@@ -63,8 +63,6 @@ module.exports = {
           return res.json({ statusCode : 500, status : 'Internal Server Error', statusMessage: 'an error occured, please try again', response : err });
 
         if(!user) {
-          req.session.reset();
-          res.redirect('/login');
           return res.json({ statusCode : 400, status : 'Bad Request', statusMessage : 'authentication failed, user not found' });
         }
         else if (user) {
@@ -85,7 +83,7 @@ module.exports = {
                   iat : Date.now()
                 },
                 token = jwt.sign(payload, config.secret);
-            return res.json({ statusCode : 200, status : 'OK', statusMessage : 'login successful', response : { user, token, expires : d.toUTCString() } });
+            return res.json({ statusCode : 200, status : 'OK', statusMessage : 'login successful', response : { user, token, expires : new Date(expire) } });
             req.session.ID = req.sessionID;
           }
         }
